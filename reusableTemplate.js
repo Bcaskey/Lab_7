@@ -41,19 +41,18 @@ var library = (function(){
         },
 
 		map : function(list, iterator) {
-            
-            
-            // for (var i = 0; i < list.length; i++)
-            // list.map(callback[this.arg]);
-            // iterator(this[i]);
+      
+        var doubles = list.map(function(num) {
+        return num / 2;
+        });
+        return doubles;
 
         },
         
 		pluck : function(list, key) {
-			return this.map(list, function(item){
-				return item[key];
-			});
+          
 		},
+                
 		reduce : function(list, iterator, accumulator) {
             if (accumulator === undefined) {
                 accumulator = list[0];
@@ -89,6 +88,26 @@ var library = (function(){
         },
 
 		contains : function(list, target) {},
+        
+
+
+
+	// describe('contains', function() {
+	// 	it('should return false if value specified is not found', function() {
+	// 	expect(library.contains([1,2,3], 4)).to.equal(false);
+	// 	});
+
+	// 	it('should work on objects', function() {
+	// 	expect(library.contains({a: 1, b: 2, c: 3}, 2)).to.equal(true);
+	// 	});
+
+	// 	it('should return true if value found', function() {
+	// 	expect(library.contains([1,2,3], 2)).to.equal(true);
+	// 	});
+	// });
+
+
+
 
 		// Advanced Collections --- Complete Functions Below
 		shuffle : function(array) {},
